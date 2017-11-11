@@ -13,7 +13,7 @@ class Result extends React.Component {
                 <h4>Race: {face.attribute.race.value} ({face.attribute.race.confidence}%)</h4>
                 <h4>Smiling: {face.attribute.smiling.value} ({face.attribute.smiling.confidence}%)</h4>
                 <hr/>
-                <button type="button" className="button-blue button-xs">Scan Another</button>
+                <button type="button" className="button-blue button-xs" onClick={this.props.startOver}>Scan Another</button>
             </div>
         );
     }

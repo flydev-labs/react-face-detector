@@ -7,6 +7,7 @@ class App extends React.Component {
 
     constructor() {
         super();
+        this.startOver = this.startOver.bind(this);
         this.scanPicture = this.scanPicture.bind(this);
         this.state = {
             loading: false,
@@ -26,10 +27,17 @@ class App extends React.Component {
                         <button type="submit" className="button-blue">Scan Image</button>
                     </form>
                     { this.state.loading ? <Spinner /> : null }
-                    { this.state.loaded ? <Result image={this.state.image} face={this.state.face} /> : null }
+                    { this.state.loaded ? <Result image={this.state.image} face={this.state.face} startOver={this.startOver} /> : null }
                 </div>
             </div>
         );
+    }
+
+    startOver(e) {
+        this.image.value = '';
+        this.setState({
+            loaded: false
+        });
     }
 
     scanPicture(e) {
