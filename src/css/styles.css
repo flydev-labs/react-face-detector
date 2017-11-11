@@ -100,3 +100,11 @@ hr {
     border: 0;
     border-top: 1px solid #EEE;
 }
+
+
+@media (max-width:961px)  {
+
+    #main-component {
+        min-width: 90%;
+    }
+}
