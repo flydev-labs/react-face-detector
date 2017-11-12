@@ -44,7 +44,7 @@ class App extends React.Component {
         this.setState({ loading: true });
         e.preventDefault();
         axios.get(`https://faceplusplus-faceplusplus.p.mashape.com/detection/detect?attribute=glass,pose,gender,age,race,smiling&url=${this.image.value}`, {
-            headers: { 'X-Mashape-Key': 'exRLoEEFC3mshi4C68ImeWGudLOzp1PpltTjsn3wDJewAflyDt' }
+            headers: { 'X-Mashape-Key': 'API_TOKEN' }
         })
         .then(res => {
             this.setState({
